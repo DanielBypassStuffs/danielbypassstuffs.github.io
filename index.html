@@ -1,0 +1,88 @@
+<!-- Hello Friend! -->
+<!-- Welcome to the DEEP CODE of HCClicker! -->
+<!-- If you are reading this and you want to view the source code, you are a victim of piracy! -->
+<!-- Please ask for permissions before copying the code! daveplaysgames#4411 on Discord -->
+<!-- If you don't want to ask then, -->
+<!-- YOU ARE AN IDIOT HA HA HA HA HA -->
+<!-- YOU ARE AN IDIOT HA HA HA HA HA -->
+<!-- YOU ARE AN IDIOT HA HA HA HA HA -->
+<!-- YOU ARE AN IDIOT HA HA HA HA HA -->
+<!-- YOU ARE AN IDIOT HA HA HA HA HA -->
+<!-- YOU ARE AN IDIOT HA HA HA HA HA -->
+<!-- YOU ARE AN IDIOT HA HA HA HA HA -->
+<!-- YOU ARE AN IDIOT HA HA HA HA HA -->
+<!-- YOU ARE AN IDIOT HA HA HA HA HA -->
+<!-- YOU ARE AN IDIOT HA HA HA HA HA -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title> </title>
+<link rel="icon"href="hc.png">
+    <script>
+        var score = 0; // initialize score to 0
+
+        function updateScore() {
+            document.title = "점수: " + score; // update the title with the current score
+        }
+
+        function moveHC() {
+            var HC = document.getElementById("HC");
+            var maxX = window.innerWidth - HC.offsetWidth;
+            var maxY = window.innerHeight - HC.offsetHeight;
+            var newX = Math.floor(Math.random() * maxX);
+            var newY = Math.floor(Math.random() * maxY);
+            HC.style.left = newX + "px";
+            HC.style.top = newY + "px";
+        }
+
+        function handleClick() {
+            score++;
+            updateScore();
+            moveHC();
+        }
+
+        function playSound() {
+            var audio = document.getElementById("click");
+            audio.play();
+        }
+    </script>
+    <style>
+body {
+  background-image: url('bliss.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+  img:hover {
+    cursor: pointer;
+  }
+        #HC {
+            position: absolute;
+        }
+        @keyframes shake {
+            0% { transform: translate(0, 0); }
+            10% { transform: translate(-10px, 0); }
+            20% { transform: translate(10px, 0); }
+            30% { transform: translate(-10px, 0); }
+            40% { transform: translate(10px, 0); }
+            50% { transform: translate(-10px, 0); }
+            60% { transform: translate(10px, 0); }
+            70% { transform: translate(-10px, 0); }
+            80% { transform: translate(10px, 0); }
+            90% { transform: translate(-10px, 0); }
+            100% { transform: translate(0, 0); }
+        }
+
+        img {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body onload="updateScore(); moveHC();">
+    <img id="HC" src="hc.png" onclick="handleClick(); playSound();"style="width:100px;height:128px;">
+</body>
+    <audio id="click">
+        <source src="click.ogg" type="audio/ogg">
+    </audio>
+</html>
